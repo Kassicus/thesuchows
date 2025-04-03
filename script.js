@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cards.forEach(card => {
         card.addEventListener("mouseenter", () => {
             const computedStyle = window.getComputedStyle(card);
-            const cardColor = computedStyle.borderColor || "rgb(100, 100, 100)";
+            const cardColor = computedStyle.backgroundColor || "rgb(100, 100, 100)";
             const darkerColor = cardColor.replace(/rgb\((\d+), (\d+), (\d+)\)/, (match, r, g, b) => {
                 return `rgb(${r * 0.5}, ${g * 0.5}, ${b * 0.5})`;
             });
