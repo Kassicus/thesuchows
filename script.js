@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
     const body = document.body;
+
+    // Add listener to toggle the expanded class on click
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const isExpanded = card.classList.contains("expanded");
+
+            // Collapse any expanded card before expanding a new one
+            document.querySelectorAll(".card.expanded").forEach(expandedCard => {
+                expandedCard.classList.remove("expanded");
+            });
+
+            // Toggle expansion only if it wasn't already expanded
+            if (!isExpanded) {
+                card.classList.add("expanded");
+                document.body.classList.add("expanded-mode"); // Darken background
+            } else {
+                document.body.classList.remove("expanded-mode");
+            }
+        });
+    });
+
+    // Close expanded card when clicking outside of it
+    document.addEventListener("click", (event) => {
+        if (!event.target.closest(".card")) {
+            document.querySelectorAll(".card.expanded").forEach(expandedCard => {
+                expandedCard.classList.remove("expanded");
+            });
+            document.body.classList.remove("expanded-mode");
+        }
+    });
     
     // Initialize movement vectors for each card
     cards.forEach(card => {

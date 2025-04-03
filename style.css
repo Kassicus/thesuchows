@@ -1,10 +1,11 @@
 body {
-    background-color: #121212;
+    background-color: #565656;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s ease;
 }
 
 .container {
@@ -32,8 +33,42 @@ body {
     font-size: 24px;
     font-weight: bold;
     color: white;
-    transition: border 0.3s ease;
+    transition: all 0.3s ease;
     border: 2px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Default layer */
+}
+
+.card.expanded {
+    width: 700px;
+    height: 450px;
+    z-index: 100; /* Bring to the top */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Fix position to viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center on screen */
+}
+
+.card .extra-content {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card.expanded .extra-content {
+    display: block;
+}
+
+/* Darken background when card is expanded */
+body.expanded-mode {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .mike:hover {
