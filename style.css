@@ -1,0 +1,39 @@
+/* General styles for the body and page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the content */
+.container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the main heading */
+h1 {
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+/* Styling for the paragraph */
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Footer section */
+.footer {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 20px;
+}
