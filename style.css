@@ -1,9 +1,5 @@
-/* General styles for the body and page layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,29 +7,49 @@ body {
     margin: 0;
 }
 
-/* Container for the content */
 .container {
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    justify-items: center;
 }
 
-/* Styling for the main heading */
-h1 {
-    font-size: 36px;
-    color: #4CAF50;
+.card {
+    width: 300px;
+    height: 450px;
+    background-color: gray;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transition: border 0.3s ease;
+    border: 2px solid transparent;
 }
 
-/* Styling for the paragraph */
-p {
-    font-size: 18px;
-    color: #555;
+.card:nth-child(1):hover {
+    border: 5px solid #ff0000;
 }
 
-/* Footer section */
-.footer {
-    font-size: 14px;
-    color: #aaa;
-    margin-top: 20px;
+.card:nth-child(2):hover {
+    border: 5px solid #00ff00;
+}
+
+.card:nth-child(3):hover {
+    border: 5px solid #0000ff;
+}
+
+.card:nth-child(4):hover {
+    border: 5px solid #ffcc00;
+}
+
+.card:nth-child(5):hover {
+    border: 5px solid #ff00ff;
+}
+
+.card:nth-child(6):hover {
+    border: 5px solid #00ffff;
 }
